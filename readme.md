@@ -10,10 +10,21 @@ SwiftAPI is created and maintained by [Phybros](http://dev.bukkit.org/profiles/p
 Comming soon. Check code for now.
 
 ##### Installation
+Require with compooser:
 `
 composer require radic/bukkit-swift-api
 `
-
+Register service provder and facade in app/config/app.php
+```php
+'providers' => array(
+    // ..
+    'Radic\BukkitSwiftApi\BukkitSwiftApiServiceProvider',
+),
+'aliases' => array(
+    // ..
+    'SwiftApi'               => 'Radic\BukkitSwiftApi\Facades\SwiftApi',
+)
+```
 ##### Basic usage
 
 ###### Connecting
@@ -28,11 +39,11 @@ if($api->isConnected())
     $api->disconnect();
 }
 ```
-###### Methods 
+###### Remote API Call methods
+If there is a response for a method, it usually returns a type class, defined in org\phybros\thrift\Types. Use var_dump() to tjek it out.. 
 ```php
 $api->announce('Message');
 $api->deOp('Playername', $boolNotifyPlayer);
-```
 $api->getBukkitVersion();
 $api->getConsoleMessages();
 $api->getFileContents();
@@ -41,13 +52,19 @@ $api->getOfflinePlayers();
 $api->ping();
 $api->getOps();
 $players = $api->getPlayers();
-$player = $api->getPlayer('Playername'); // returns instance of org\phybros\thrift\Player
-
-`
-
-##### Installation
-..
-
+$player = $api->getPlayer('Playername'); // returns org\phybros\thrift\Player 
+```
+##### SwiftApi methods
+You can probably ignore this..
+```php
+$api->setClient();
+$api->getProtocol();
+$api->setProtocol();
+$api->getSocket();
+$api->setSocket();
+$api->getTransport();
+$api->setTransport();
+```
 ##### Installation
 ..
 
