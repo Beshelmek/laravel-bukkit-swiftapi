@@ -31,7 +31,8 @@ if($api->isConnected())
 ###### Methods 
 `
 $api->announce('Message');
-$api->deOp('Playername', $boolNotifyPlayer);
+
+$api->deOp('Playername', $boolNotifyPlayer); \n
 $api->getBukkitVersion();
 $api->getConsoleMessages();
 $api->getFileContents();
