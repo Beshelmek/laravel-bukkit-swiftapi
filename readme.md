@@ -10,10 +10,11 @@ SwiftAPI is created and maintained by [Phybros](http://dev.bukkit.org/profiles/p
 Comming soon. Check code for now.
 
 ##### Installation
-Require with compooser:
+Require with composer:
 `
 composer require radic/bukkit-swift-api
 `
+
 Register service provder and facade in app/config/app.php
 ```php
 'providers' => array(
@@ -25,21 +26,35 @@ Register service provder and facade in app/config/app.php
     'SwiftApi'               => 'Radic\BukkitSwiftApi\Facades\SwiftApi',
 )
 ```
-##### Basic usage
 
-###### Connecting
+##### Configuration
+Use `php artisan config:publish radic\bukkit-swift-api` to edit the default configuration.
+
+```php
+array(
+    'global' => [
+        'host' => 'localhost',
+        'port' => 21111,
+        'username' => 'admin',
+        'password' => 'test',
+        'salt' => 'saltines'
+    ]
+);
+```
+
+##### Connecting
 ```php
 $api = SwiftAPI::connect(); // Uses config settings
-$api = SwiftAPI::connect('ip-or-hostname', 123123, 'username', 'password', 'password-encrypot-salt'); 
+$api = SwiftAPI::connect('ip-or-host', 4444, 'username', 'password', 'crypt-salt'); 
 if($api->isConnected())
 {
     // Do stuff
-    $onlinePlayers = $api->getOnlinePlayers();
-    // And disconnect
+    $onlinePlayers = $api->getOnlinePlayers();    
+    // Always disconnect
     $api->disconnect();
 }
 ```
-###### Remote API Call methods
+##### Remote API Call methods
 If there is a response for a method, it usually returns a type class, defined in org\phybros\thrift\Types. Use var_dump() to tjek it out.. 
 ```php
 $api->announce('Message');
@@ -54,25 +69,12 @@ $api->getOps();
 $players = $api->getPlayers();
 $player = $api->getPlayer('Playername'); // returns org\phybros\thrift\Player 
 ```
-##### SwiftApi methods
-You can probably ignore this..
-```php
-$api->setClient();
-$api->getProtocol();
-$api->setProtocol();
-$api->getSocket();
-$api->setSocket();
-$api->getTransport();
-$api->setTransport();
-```
-##### Installation
-..
 
-##### Might also be interesting
+##### More
 [Laravel Bukkit Console](http://dev.bukkit.org/profiles/phybros). Uses the SwiftAPI and some fancy JS to create a console to directly interact with your Bukkit Server.
 
-### Third Party Credits
-[Phybros](http://dev.bukkit.org/profiles/phybros): [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi)
+### Credits
+[Phybros](http://dev.bukkit.org/profiles/phybros) created [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi)
 
 ### License
 GNU General Public License version 3 (GPLv3)

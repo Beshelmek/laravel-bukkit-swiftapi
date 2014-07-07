@@ -1,4 +1,4 @@
-<?php namespace Radic\Bukkit;
+<?php namespace Radic\BukkitSwiftapi;
 
 use Config;
 use Exception;
@@ -161,7 +161,7 @@ class Api
         $this->client = $client;
     }
 
-    public function connect()
+    public function connect($host = '', $port = null, $username = null, $password = null, $salt = null)
     {
         if (!$this->isConnected())
         {
@@ -179,6 +179,7 @@ class Api
                 die(var_dump($e));
             }
         }
+        return $this;
     }
 
     /**

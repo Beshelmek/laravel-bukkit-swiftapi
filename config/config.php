@@ -1,8 +1,7 @@
 <?php
 
 return array(
-    
-    'default' => [
+    'global' => [
         'host' => 'localhost',
         'port' => 21111,
         'username' => 'admin',
