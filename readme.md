@@ -39,14 +39,22 @@ array(
         'username' => 'admin',
         'password' => 'test',
         'salt' => 'saltines'
+    ],
+    'my-other-server' => [
+        'host' => '11.11.11.11',        
+        'username' => 'admin',
+        'password' => 'test'
+        // If you left out config settings, it will use the global for that setting        
     ]
 );
 ```
 
 ##### Connecting
 ```php
-$api = SwiftAPI::connect(); // Uses config settings
+$api = SwiftAPI::connect(); // Uses global config settings
 $api = SwiftAPI::connect('ip-or-host', 4444, 'username', 'password', 'crypt-salt'); 
+$api = SwiftAPI::connect('ip-or-host', 4444, 'username', 'password'); // Uses salt from global config
+$api = SwiftAPI::connectTo('my-other-server'); // Uses 'my-other-server' from conffig  
 if($api->isConnected())
 {
     // Do stuff
@@ -71,16 +79,16 @@ $player = $api->getPlayer('Playername');
 For the complete list of available API methods check out [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) or check the Radic\BukkitSwiftApi\SwiftApi class
 
 ##### Further reading
-[Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi). The SwiftAPI Website.
-[SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/). The docs for SwiftAPI generated Thrift code.
-[Bukkit SwiftAPI Reposiotry](https://bitbucket.org/phybros/swiftapi). Repository for the SwiftApi Bukkit Java plugin.
+- [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi). The SwiftAPI Website.
+- [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/). The docs for SwiftAPI generated Thrift code.
+- [Bukkit SwiftAPI Reposiotry](https://bitbucket.org/phybros/swiftapi). Repository for the SwiftApi Bukkit Java plugin.
 
 ##### Examples and goodies
 Check my [Laravel Bukkit Console](http://dev.bukkit.org/profiles/phybros). A web based console to directly interact with your Bukkit Server.
 
 ### Credits
-[Robin Radic](https://github.com/RobinRadic) created [Laravel Bukkit SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi)
-[Phybros](http://dev.bukkit.org/profiles/phybros) created [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi)
+- [Robin Radic](https://github.com/RobinRadic) created [Laravel Bukkit SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi)
+- [Phybros](http://dev.bukkit.org/profiles/phybros) created [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi)
 
 ### License
 GNU General Public License version 3 (GPLv3)

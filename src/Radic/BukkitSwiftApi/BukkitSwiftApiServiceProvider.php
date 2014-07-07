@@ -1,4 +1,4 @@
-<?php namespace Radic\BukkitSwiftapi;
+<?php namespace Radic\BukkitSwiftApi;
 
 
 $THRIFT_ROOT = dirname(__FILE__);
@@ -30,10 +30,10 @@ class BukkitSwiftapiServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->registerApi();
 	}
 
-    public function registerApi()
+    protected  function registerApi()
     {
         $THRIFT_ROOT = dirname(__FILE__);
 
@@ -59,7 +59,7 @@ class BukkitSwiftapiServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('radic/bukkit-swiftapi', 'radic/bukkit-swiftapi');
+		return array('Radic\Bukkit\SwiftApi');
 	}
 
 }

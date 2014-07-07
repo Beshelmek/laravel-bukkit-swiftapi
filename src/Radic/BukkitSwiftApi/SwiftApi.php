@@ -1,4 +1,4 @@
-<?php namespace Radic\BukkitSwiftapi;
+<?php namespace Radic\BukkitSwiftApi;
 
 use Config;
 use Exception;
