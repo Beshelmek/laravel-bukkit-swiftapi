@@ -17,7 +17,7 @@ composer require radic/bukkit-swift-api
 ##### Basic usage
 
 ###### Connecting
-`
+```php
 $api = SwiftAPI::connect(); // Uses config settings
 $api = SwiftAPI::connect('ip-or-hostname', 123123, 'username', 'password', 'password-encrypot-salt'); 
 if($api->isConnected())
@@ -27,14 +27,12 @@ if($api->isConnected())
     // And disconnect
     $api->disconnect();
 }
-`
+```
 ###### Methods 
-`
+```php
 $api->announce('Message');
-`
-`
 $api->deOp('Playername', $boolNotifyPlayer);
-`
+```
 $api->getBukkitVersion();
 $api->getConsoleMessages();
 $api->getFileContents();
