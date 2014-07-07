@@ -7,18 +7,69 @@ use Thrift\Transport\TFramedTransport;
 use Thrift\Transport\TSocket;
 
 use org\phybros\thrift\SwiftApiClient;
-class Api
+
+
+class SwiftApi
 {
     protected $socket;
     protected $transport;
     protected $protocol;
     protected $client;
+    protected $connectionException;
 
-    public function disconnect()
+    protected $host;
+    protected $port;
+    protected $username;
+    protected $password;
+    protected $salt;
+
+
+
+
+    public function connect($host = null, $port = null, $username = null, $password = null, $salt = null)
     {
-        if ($this->isConnected())
+
+        if (!$this->isConnected())
         {
-            $this->transport->close();
+            $this->host       = is_null($host) ? Config::get('radic/bukkit-swift-api::global.host') : $host;
+            $this->port       = is_null($port) ? Config::get('radic/bukkit-swift-api::global.port') : $port;
+            $this->username   = is_null($username) ? Config::get('radic/bukkit-swift-api::global.username') : $username;
+            $this->password   = is_null($password) ? Config::get('radic/bukkit-swift-api::global.password') : $password;
+            $this->salt       = is_null($salt) ? Config::get('radic/bukkit-swift-api::global.salt') : $salt;
+
+            $this->connectionError = null;
+            try
+            {
+                $this->socket = new TSocket($this->host, $this->port);
+                $this->socket->setRecvTimeout(10000);
+                $this->transport = new TFramedTransport($this->socket);
+                $this->protocol = new TBinaryProtocol($this->transport);
+                $this->client = new SwiftApiClient($this->protocol, $this->protocol);
+                $this->transport->open();
+            } catch (Exception $e)
+            {
+                $this->connectionException = $e;
+                # @todo change this
+                # die(var_dump($e));
+            }
+        }
+        return $this;
+    }
+
+    public function connectTo($server)
+    {
+        $c = Config::get('radic/bukkit-swift-api::' . $server);
+        if(isset($c) && is_array($c) && !empty($c))
+        {
+            $this->connect(@$c['host'], @$c['port'], @$c['password'], @$c['username'], @$c['salt']);
+        }
+    }
+
+    public function getConnectionException()
+    {
+        if(isset($this->connectionException) && $this->connectionException instanceof Exception)
+        {
+            return $this->connectionException;
         }
     }
 
@@ -32,6 +83,14 @@ class Api
         return $this->transport->isOpen();
     }
 
+    public function disconnect()
+    {
+        if ($this->isConnected())
+        {
+            $this->transport->close();
+        }
+    }
+
     public function announce($message)
     {
         return $this->client->announce($this->getAuthString('announce'), $message);
@@ -39,10 +98,7 @@ class Api
 
     protected function getAuthString($methodName)
     {
-        $username = Config::get('radic/bukkit::api.username');
-        $password = Config::get('radic/bukkit::api.password');
-        $salt = Config::get('radic/bukkit::api.salt');
-        $toHash = $username . $methodName . $password . $salt;
+        $toHash = $this->username . $methodName . $this->password . $this->salt;
 
         return hash("sha256", $toHash);
     }
@@ -161,26 +217,6 @@ class Api
         $this->client = $client;
     }
 
-    public function connect($host = '', $port = null, $username = null, $password = null, $salt = null)
-    {
-        if (!$this->isConnected())
-        {
-            try
-            {
-                $this->socket = new TSocket(Config::get('radic/bukkit::api.host'), Config::get('radic/bukkit::api.port'));
-                $this->socket->setRecvTimeout(10000);
-                $this->transport = new TFramedTransport($this->socket);
-                $this->protocol = new TBinaryProtocol($this->transport);
-                $this->client = new SwiftApiClient($this->protocol, $this->protocol);
-                $this->transport->open();
-            } catch (Exception $e)
-            {
-                # @todo change this
-                die(var_dump($e));
-            }
-        }
-        return $this;
-    }
 
     /**
      * @return mixed

@@ -3,8 +3,8 @@ Wraps the Apache Thrift generated PHP library for SwiftAPI in a Laravel Package 
 
 SwiftAPI is a Bukkit plugin that allows you to use the generated API to make simple calls to the Bukkit server over the webz. Or if wanted, you can generate it yourself using Apache Thrift. This makes SwiftAPI usable in almost any programming language.
 
-### Version 0.1.0 Pre-Alpha
-[View changelog](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/changelog.md)
+### Version 0.2.0 Beta
+[View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/changelog.md)
 
 ##### Requirements
 - PHP > 5.3 
@@ -51,17 +51,27 @@ array(
 ```
 
 ##### Connecting
+There are several ways to connect:
 ```php
 $api = SwiftAPI::connect(); // Uses global config settings
 $api = SwiftAPI::connect('ip-or-host', 4444, 'username', 'password', 'crypt-salt'); 
 $api = SwiftAPI::connect('ip-or-host', 4444, 'username', 'password'); // Uses salt from global config
 $api = SwiftAPI::connectTo('my-other-server'); // Uses 'my-other-server' from conffig  
+```
+
+Example connection:
+```php
+$api = SwiftApi::connect();
 if($api->isConnected())
 {
-    // Do stuff
-    $onlinePlayers = $api->getOnlinePlayers();    
-    // Always disconnect
+    var_dump('Connected');
+    $serverInfo = $api->getServer();
     $api->disconnect();
+    var_dump($serverInfo);
+}
+else
+{
+    var_dump( $api->getConnectionException()->getMessage() );
 }
 ```
 ##### Remote API Call methods

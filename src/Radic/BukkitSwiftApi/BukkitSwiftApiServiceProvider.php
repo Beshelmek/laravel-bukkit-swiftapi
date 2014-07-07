@@ -14,7 +14,7 @@ use Thrift\Protocol\TBinaryProtocol;
 
 use Illuminate\Support\ServiceProvider;
 
-class BukkitSwiftapiServiceProvider extends ServiceProvider {
+class BukkitSwiftApiServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -32,6 +32,7 @@ class BukkitSwiftapiServiceProvider extends ServiceProvider {
 	{
 		$this->registerApi();
 	}
+
 
     protected  function registerApi()
     {
@@ -61,5 +62,10 @@ class BukkitSwiftapiServiceProvider extends ServiceProvider {
 	{
 		return array('Radic\Bukkit\SwiftApi');
 	}
+
+    public function boot()
+    {
+        $this->package('radic/bukkit-swift-api', 'radic/bukkit-swift-api');
+    }
 
 }
