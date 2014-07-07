@@ -1,14 +1,13 @@
 ## Laravel Bukkit SwiftAPI
-Wraps the Apache Thrift generated PHP library for SwiftAPI in a Laravel Package.
+Wraps the Apache Thrift generated PHP library for SwiftAPI in a Laravel Package and provides easy access trough a Facade. 
 
-SwiftAPI is a Bukkit plugin that allows you to use the generated API to make simple calls to the Bukkit server over the webz.
-SwiftAPI is created and maintained by [Phybros](http://dev.bukkit.org/profiles/phybros). Check out the [Bukkit SwiftAPI Plugin Page](http://dev.bukkit.org/bukkit-plugins/swiftapi) for more information.
+SwiftAPI is a Bukkit plugin that allows you to use the generated API to make simple calls to the Bukkit server over the webz. Or if wanted, you can generate it yourself using Apache Thrift. This makes SwiftAPI usable in almost any programming language.
 
 ### Version 0.1.0 Pre-Alpha
 
 ##### Requirements
-- Laravel 4.*
-- Nothing else
+- PHP > 5.3 
+- Laravel > 4.0
 
 
 ##### Installation
@@ -57,25 +56,30 @@ if($api->isConnected())
 }
 ```
 ##### Remote API Call methods
-If there is a response for a method, it usually returns a type class, defined in org\phybros\thrift\Types. Use var_dump() to tjek it out.. 
+If there is a response for a method, it usually returns a data type class.
+The structures of all data types are described in the [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) 
 ```php
 $api->announce('Message');
 $api->deOp('Playername', $boolNotifyPlayer);
 $api->getBukkitVersion();
-$api->getConsoleMessages();
-$api->getFileContents();
-$api->getOfflinePlayer();
-$api->getOfflinePlayers();
-$api->ping();
-$api->getOps();
+$api->getConsoleMessages($since = 0);
+$api->getFileContents($fileName);
 $players = $api->getPlayers();
-$player = $api->getPlayer('Playername'); // returns org\phybros\thrift\Player 
+$player = $api->getPlayer('Playername');
+// etc
 ```
+For the complete list of available API methods check out [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) or check the Radic\BukkitSwiftApi\SwiftApi class
 
-##### More
-[Laravel Bukkit Console](http://dev.bukkit.org/profiles/phybros). Uses the SwiftAPI and some fancy JS to create a console to directly interact with your Bukkit Server.
+##### Further reading
+[Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi). The SwiftAPI Website.
+[SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/). The docs for SwiftAPI generated Thrift code.
+[Bukkit SwiftAPI Reposiotry](https://bitbucket.org/phybros/swiftapi). Repository for the SwiftApi Bukkit Java plugin.
+
+##### Examples and goodies
+Check my [Laravel Bukkit Console](http://dev.bukkit.org/profiles/phybros). A web based console to directly interact with your Bukkit Server.
 
 ### Credits
+[Robin Radic](https://github.com/RobinRadic) created [Laravel Bukkit SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi)
 [Phybros](http://dev.bukkit.org/profiles/phybros) created [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi)
 
 ### License
