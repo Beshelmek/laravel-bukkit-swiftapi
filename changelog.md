@@ -8,3 +8,5 @@ Initial pre-alpha release
 
 ### Todo
 - Add remaining [Thrift/SwiftApi service](http://willwarren.com/docs/swiftapi/latest) method calls
+- Write PHPDoc for BukkitSwiftApi/SwiftApi
+- Maby write unit tests.

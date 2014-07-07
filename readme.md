@@ -87,7 +87,7 @@ $players = $api->getPlayers();
 $player = $api->getPlayer('Playername');
 // etc
 ```
-For the complete list of available API methods check out [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) or check the Radic\BukkitSwiftApi\SwiftApi class
+For the complete list of available API methods check out [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) or check the [Radic\BukkitSwiftApi\SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/src/Radic/BukkitSwiftApi/SwiftApi.php) class
 
 ##### Further reading
 - [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi). The SwiftAPI Website.
