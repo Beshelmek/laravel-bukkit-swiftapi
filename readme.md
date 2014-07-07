@@ -14,8 +14,35 @@ Comming soon. Check code for now.
 composer require radic/bukkit-swift-api
 `
 
-##### Installation
-..
+##### Basic usage
+
+###### Connecting
+`
+$api = SwiftAPI::connect(); // Uses config settings
+$api = SwiftAPI::connect('ip-or-hostname', 123123, 'username', 'password', 'password-encrypot-salt'); 
+if($api->isConnected())
+{
+    // Do stuff
+    $onlinePlayers = $api->getOnlinePlayers();
+    // And disconnect
+    $api->disconnect();
+}
+`
+###### Methods 
+`
+$api->announce('Message');
+$api->deOp('Playername', $boolNotifyPlayer);
+$api->getBukkitVersion();
+$api->getConsoleMessages();
+$api->getFileContents();
+$api->getOfflinePlayer();
+$api->getOfflinePlayers();
+$api->ping();
+$api->getOps();
+$players = $api->getPlayers();
+$player = $api->getPlayer('Playername'); // returns instance of org\phybros\thrift\Player
+
+`
 
 ##### Installation
 ..
