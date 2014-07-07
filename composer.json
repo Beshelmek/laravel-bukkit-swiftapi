@@ -1,0 +1,24 @@
+{
+    "name": "radic/bukkit-swift-api",
+    "description": "SwiftApi PHP API wrapped in a laravel package for remote calls to a minecraft bukkit server. Requires http://dev.bukkit.org/bukkit-plugins/swiftapi/ to be installed",
+    "authors": [
+        {
+            "name": "Robin Radic",
+            "email": "robin@radic.nl"
+        },
+        {
+            "name": "phybros",
+            "website": "http://dev.bukkit.org/bukkit-plugins/swiftapi/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Radic\\BukkitSwiftApi": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
