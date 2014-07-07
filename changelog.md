@@ -1,6 +1,9 @@
 ### Changelog
 
 ##### 0.2.0
+- Fixed stuff for proper packagist display.
+
+##### 0.2.0
 - Fixed some connection stuff and error handling.
 
 ##### 0.1.0

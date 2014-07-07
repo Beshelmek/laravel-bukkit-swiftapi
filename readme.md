@@ -3,7 +3,7 @@ Wraps the Apache Thrift generated PHP library for SwiftAPI in a Laravel Package 
 
 SwiftAPI is a Bukkit plugin that allows you to use the generated API to make simple calls to the Bukkit server over the webz. Or if wanted, you can generate it yourself using Apache Thrift. This makes SwiftAPI usable in almost any programming language.
 
-### Version 0.2.0 Beta
+### Version 0.2.1 Beta
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/changelog.md)
 
 ##### Requirements
