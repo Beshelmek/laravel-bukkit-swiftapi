@@ -87,7 +87,7 @@ $players = $api->getPlayers();
 $player = $api->getPlayer('Playername');
 // etc
 ```
-For the complete list of available API methods check out [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) or check the [Radic\BukkitSwiftApi\SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/src/Radic/BukkitSwiftApi/SwiftApi.php) class
+For the complete list of available API methods check out [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) or check the [Radic\BukkitSwiftApi\SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/src/Radic/BukkitSwiftApi/SwiftApi.php) class.
 
 ##### Further reading
 - [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi). The SwiftAPI Website.
@@ -95,7 +95,7 @@ For the complete list of available API methods check out [SwiftAPI Thrift Docume
 - [Bukkit SwiftAPI Reposiotry](https://bitbucket.org/phybros/swiftapi). Repository for the SwiftApi Bukkit Java plugin.
 
 ##### Examples and goodies
-Check my [Laravel Bukkit Console](http://dev.bukkit.org/profiles/phybros). A web based console to directly interact with your Bukkit Server.
+Check my [Laravel Bukkit Console](https://github.com/RobinRadic/laravel-bukkit-console). A web based console to directly interact with your Bukkit Server.
 
 ### Credits
 - [Robin Radic](https://github.com/RobinRadic) created [Laravel Bukkit SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi)
