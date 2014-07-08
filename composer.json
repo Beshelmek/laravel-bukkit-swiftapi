@@ -25,5 +25,5 @@
             "Radic\\BukkitSwiftApi": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
