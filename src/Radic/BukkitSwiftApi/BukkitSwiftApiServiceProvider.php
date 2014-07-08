@@ -3,13 +3,8 @@
 
 $THRIFT_ROOT = dirname(__FILE__);
 require_once $THRIFT_ROOT . '/Thrift/ClassLoader/ThriftClassLoader.php';
-use Radic\BukkitSwiftapi\SwiftApi;
+
 use Thrift\ClassLoader\ThriftClassLoader;
-
-use Thrift\Transport\TSocket;
-use Thrift\Transport\TFramedTransport;
-use Thrift\Protocol\TBinaryProtocol;
-
 
 
 use Illuminate\Support\ServiceProvider;

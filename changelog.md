@@ -1,5 +1,8 @@
 ### Changelog
 
+##### 1.0.0
+- PHPDoc for BukkitSwiftApi/SwiftApi added
+
 ##### 0.3.0
 - The Api wrapper is now able to properly call all methods on the SwiftApiClient. Which means all methods are now supported.
 
@@ -13,5 +16,4 @@
 Initial pre-alpha release
 
 ### Todo
-- Write PHPDoc for BukkitSwiftApi/SwiftApi
-- Maby write unit tests.
+- Maby write unit tests if im bored.
