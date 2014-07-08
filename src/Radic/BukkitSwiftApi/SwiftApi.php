@@ -14,6 +14,46 @@ use Thrift\Transport\TSocket;
  * @author Robin Radic
  * @license GNU General Public License version 3 (GPLv3)
  * @package Radic\BukkitSwiftApi
+ *
+ * @method addToWhitelist(string $name);
+ * @method announce(string $message);
+ * @method ban(string $name);
+ * @method banIp(string $ip);
+ * @method deOp(string $name, bool $notifyPlayer);
+ * @method mixed getBannedIps();
+ * @method mixed getBannedPlayers();
+ * @method mixed getBukkitVersion();
+ * @method mixed getConsoleMessages(int $since);
+ * @method mixed getFileContents(string $fileName);
+ * @method mixed getOfflinePlayer(string $name);
+ * @method mixed getOfflinePlayers();
+ * @method mixed getOps();
+ * @method mixed getPlayer(string $name);
+ * @method mixed getPlayers();
+ * @method mixed getPlugin(string $name);
+ * @method mixed getPlugins();
+ * @method mixed getServer();
+ * @method mixed getServerVersion();
+ * @method mixed getWhitelist();
+ * @method mixed getWorld(string $worldName);
+ * @method mixed getWorlds();
+ * @method installPlugin(string $downloadUrl, string $md5);
+ * @method kick(string $name, string $message);
+ * @method op(string $name, bool $notifyPlayer);
+ * @method int ping();
+ * @method reloadServer();
+ * @method removeFromWhitelist(string $name);
+ * @method replacePlugin(string $pluginName, string $downloadUrl, string $md5);
+ * @method runConsoleCommand(string $command);
+ * @method saveWorld(string $worldName);
+ * @method setFileContents(string $fileName, string $fileContents);
+ * @method setGameMode(string $name, int $mode);
+ * @method setPvp(string $worldName, bool $isPvp);
+ * @method setStorm(string $worldName, bool $hasStorm);
+ * @method setThundering(string $worldName, bool $isThundering);
+ * @method setWorldTime(string $worldName, int $time);
+ * @method unBan(string $name);
+ * @method unBanIp(string $ip);
  */
 class SwiftApi
 {
@@ -134,7 +174,7 @@ class SwiftApi
     }
 
     /**
-     *
+     * Disconnects the api client.
      */
     public function disconnect()
     {
@@ -156,8 +196,9 @@ class SwiftApi
     }
 
     /**
-     * @param $name
-     * @param $arguments
+     * @param string $name
+     * @param array $arguments
+     * @return mixed
      */
     public function __call($name, $arguments)
     {
