@@ -144,22 +144,13 @@ $api->unBanIp($ip);
 When requesting this info
 ```php
 $api = SwiftApi::connect();
-if($api->isConnected())
-{
-    var_dump('Connected');
-    $calls = [];
-    $calls[] = $api->getServer();
-    $calls[] = $api->getPlugins();
-    $calls[] = $api->getOfflinePlayers();
-    $calls[] = $api->ping();
-    $calls[] = $api->getOps();
-    $api->disconnect();
-    var_dump($calls);
-}
-else
-{
-    var_dump( $api->getConnectionError() );
-}
+$calls[] = $api->getServer();
+$calls[] = $api->getPlugins();
+$calls[] = $api->getOfflinePlayers();
+$calls[] = $api->ping();
+$calls[] = $api->getOps();
+$api->disconnect();
+var_dump($calls);
 ```
 [You'll get something like this in return](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/example-output.md)
 
