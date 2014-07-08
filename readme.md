@@ -30,7 +30,7 @@ Register service provder and facade in app/config/app.php
 ```
 
 ##### Configuration
-Use `php artisan config:publish radic\bukkit-swift-api` to edit the default configuration.
+Use `php artisan config:publish radic/bukkit-swift-api` to edit the default configuration.
 
 ```php
 array(
@@ -123,6 +123,29 @@ $api->unBan($name);
 $api->unBanIp($ip);
 // etc
 ```
+
+##### Example output
+When requesting this info
+```php
+$api = SwiftApi::connect();
+if($api->isConnected())
+{
+    var_dump('Connected');
+    $calls = [];
+    $calls[] = $api->getServer();
+    $calls[] = $api->getPlugins();
+    $calls[] = $api->getOfflinePlayers();
+    $calls[] = $api->ping();
+    $calls[] = $api->getOps();
+    $api->disconnect();
+    var_dump($calls);
+}
+else
+{
+    var_dump( $api->getConnectionError() );
+}
+```
+[You'll get something like this in return](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/example-output.html)
 
 ##### Further reading
 - [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi). The SwiftAPI Website.
