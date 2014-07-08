@@ -3,8 +3,19 @@ Wraps the Apache Thrift generated PHP library for SwiftAPI in a Laravel Package 
 
 SwiftAPI is a Bukkit plugin that allows you to use the generated API to make simple calls to the Bukkit server over the webz. Or if wanted, you can generate it yourself using Apache Thrift. This makes SwiftAPI usable in almost any programming language.
 
-### Version 0.3.0 Beta
+#### Version 0.3.0 Beta
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/changelog.md)
+
+### ToC
+- [Requirements](https://github.com/RobinRadic/laravel-bukkit-swiftapi#requirements)
+- [Installation](https://github.com/RobinRadic/laravel-bukkit-swiftapi#installation)
+- [Configuration](https://github.com/RobinRadic/laravel-bukkit-swiftapi#configuration)
+- [Connecting](https://github.com/RobinRadic/laravel-bukkit-swiftapi#connecting)
+- [Methods](https://github.com/RobinRadic/laravel-bukkit-swiftapi#methods)
+- [Example output](https://github.com/RobinRadic/laravel-bukkit-swiftapi#example-output)
+- [Further reading](https://github.com/RobinRadic/laravel-bukkit-swiftapi#further-reading)
+- [Credits](https://github.com/RobinRadic/laravel-bukkit-swiftapi#credits)
+- [License](https://github.com/RobinRadic/laravel-bukkit-swiftapi#license)
 
 ##### Requirements
 - PHP > 5.3 
@@ -121,7 +132,6 @@ $api->setThundering($worldName, $isThundering);
 $api->setWorldTime($worldName, $time);
 $api->unBan($name);
 $api->unBanIp($ip);
-// etc
 ```
 
 ##### Example output
