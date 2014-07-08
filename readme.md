@@ -11,8 +11,7 @@ SwiftAPI is a Bukkit plugin that allows you to use the generated API to make sim
 - [Installation](https://github.com/RobinRadic/laravel-bukkit-swiftapi#installation)
 - [Configuration](https://github.com/RobinRadic/laravel-bukkit-swiftapi#configuration)
 - [Connecting](https://github.com/RobinRadic/laravel-bukkit-swiftapi#connecting)
-- [Methods](https://github.com/RobinRadic/laravel-bukkit-swiftapi#methods)
-- [Example output](https://github.com/RobinRadic/laravel-bukkit-swiftapi#example-output)
+- [API Methods](https://github.com/RobinRadic/laravel-bukkit-swiftapi#methods)
 - [Further reading](https://github.com/RobinRadic/laravel-bukkit-swiftapi#further-reading)
 - [Credits](https://github.com/RobinRadic/laravel-bukkit-swiftapi#credits)
 - [License](https://github.com/RobinRadic/laravel-bukkit-swiftapi#license)
@@ -95,9 +94,7 @@ else
     var_dump( $api->getConnectionException()->getMessage() );
 }
 ```
-##### Remote API Call methods
-If there is a response for a method, it usually returns a data type class.
-The structures of all data types are described in the [SwiftAPI Thrift Documentation](http://willwarren.com/docs/swiftapi/latest/) 
+##### API Methods 
 ```php
 $api->addToWhitelist($name);
 $api->announce($message);
@@ -140,8 +137,7 @@ $api->unBan($name);
 $api->unBanIp($ip);
 ```
 
-##### Example output
-When requesting this info
+[See here](http://willwarren.com/docs/swiftapi/latest/) which methods return data, and how that data is structured. A quick example:
 ```php
 $api = SwiftApi::connect();
 $calls[] = $api->getServer();

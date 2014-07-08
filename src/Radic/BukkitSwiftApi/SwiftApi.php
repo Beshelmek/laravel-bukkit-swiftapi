@@ -195,11 +195,6 @@ class SwiftApi
         return hash("sha256", $toHash);
     }
 
-    /**
-     * @param string $name
-     * @param array $arguments
-     * @return mixed
-     */
     public function __call($name, $arguments)
     {
         if (method_exists($this->client, $name))
