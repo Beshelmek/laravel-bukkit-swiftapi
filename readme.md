@@ -29,7 +29,9 @@ composer require radic/bukkit-swift-api
 ```
 Or add to composer.json:
 ```JSON
-"radic/bukkit-swift-api": "dev-master"
+{
+    "radic/bukkit-swift-api": "dev-master"
+}
 ```
 
 Register service provder and facade in app/config/app.php
