@@ -161,7 +161,7 @@ else
     var_dump( $api->getConnectionError() );
 }
 ```
-[You'll get something like this in return](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/example-output.html)
+[You'll get something like this in return](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/example-output.md)
 
 ##### Further reading
 - [Bukkit SwiftAPI](http://dev.bukkit.org/bukkit-plugins/swiftapi). The SwiftAPI Website.
