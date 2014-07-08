@@ -6,7 +6,7 @@ SwiftAPI is a Bukkit plugin that allows you to use the generated API to make sim
 #### Version 0.3.0 Beta
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-swiftapi/blob/master/changelog.md)
 
-### ToC
+### Overview
 - [Requirements](https://github.com/RobinRadic/laravel-bukkit-swiftapi#requirements)
 - [Installation](https://github.com/RobinRadic/laravel-bukkit-swiftapi#installation)
 - [Configuration](https://github.com/RobinRadic/laravel-bukkit-swiftapi#configuration)
@@ -26,6 +26,10 @@ SwiftAPI is a Bukkit plugin that allows you to use the generated API to make sim
 Require with composer:
 ```Batchfile
 composer require radic/bukkit-swift-api
+```
+Or add to composer.json:
+```JSON
+"radic/bukkit-swift-api": "dev-master"
 ```
 
 Register service provder and facade in app/config/app.php
