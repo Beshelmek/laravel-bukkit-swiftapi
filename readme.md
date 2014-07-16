@@ -1,4 +1,8 @@
 ## Laravel Bukkit SwiftAPI
+[![Build Status](https://travis-ci.org/RobinRadic/bukkit-console.svg?branch=master)](https://travis-ci.org/RobinRadic/bukkit-console)
+[![Latest Stable Version](https://poser.pugx.org/radic/bukkit-console/v/stable.svg)](https://packagist.org/packages/radic/bukkit-console)
+[![License](https://poser.pugx.org/radic/bukkit-console/license.svg)](https://packagist.org/packages/radic/bukkit-console)
+
 Wraps the Apache Thrift generated PHP library for SwiftAPI in a Laravel Package and provides easy access trough a Facade. 
 
 SwiftAPI is a Bukkit plugin that allows you to use the generated API to make simple calls to the Bukkit server over the webz. Or if wanted, you can generate it yourself using Apache Thrift. This makes SwiftAPI usable in almost any programming language.
