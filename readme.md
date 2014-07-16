@@ -1,7 +1,7 @@
 ## Laravel Bukkit SwiftAPI
-[![Build Status](https://travis-ci.org/RobinRadic/bukkit-console.svg?branch=master)](https://travis-ci.org/RobinRadic/bukkit-console)
-[![Latest Stable Version](https://poser.pugx.org/radic/bukkit-console/v/stable.svg)](https://packagist.org/packages/radic/bukkit-console)
-[![License](https://poser.pugx.org/radic/bukkit-console/license.svg)](https://packagist.org/packages/radic/bukkit-console)
+[![Build Status](https://travis-ci.org/RobinRadic/laravel-bukkit-swiftapi.svg?branch=master)](https://travis-ci.org/RobinRadic/laravel-bukkit-swiftapi)
+[![Latest Stable Version](https://poser.pugx.org/radic/bukkit-swift-api/v/stable.svg)](https://packagist.org/packages/radic/bukkit-swift-api)
+[![License](https://poser.pugx.org/radic/bukkit-swift-api/license.svg)](https://packagist.org/packages/radic/bukkit-swift-api)
 
 Wraps the Apache Thrift generated PHP library for SwiftAPI in a Laravel Package and provides easy access trough a Facade. 
 
@@ -160,7 +160,7 @@ var_dump($calls);
 - [Bukkit SwiftAPI Reposiotry](https://bitbucket.org/phybros/swiftapi). Repository for the SwiftApi Bukkit Java plugin.
 
 ##### Examples and goodies
-Check my [Laravel Bukkit Console](https://github.com/RobinRadic/laravel-bukkit-console). A web based console to directly interact with your Bukkit Server.
+Check my [Laravel Bukkit Console](https://github.com/RobinRadic/laravel-bukkit-swift-api). A web based console to directly interact with your Bukkit Server.
 
 ### Credits
 - [Robin Radic](https://github.com/RobinRadic) created [Laravel Bukkit SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi)
