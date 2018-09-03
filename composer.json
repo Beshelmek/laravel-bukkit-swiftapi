@@ -1,7 +1,7 @@
 {
-    "name": "radic/bukkit-swift-api",
+    "name": "beshelmek/bukkit-swift-api",
     "description": "SwiftApi PHP API wrapped in a laravel package for remote calls to a minecraft bukkit server.",
-    "homepage": "https://github.com/RobinRadic/laravel-bukkit-swiftapi",
+    "homepage": "https://github.com/Beshelmek/laravel-bukkit-swiftapi",
     "keywords": ["minecraft", "bukkit", "swiftapi", "laravel"],
     "license": "GNU General Public License version 3 (GPLv3)",
     "authors": [
@@ -14,6 +14,11 @@
             "name": "phybros",
             "homepage": "http://dev.bukkit.org/bukkit-plugins/swiftapi/",
             "role": "SwiftApi Author"
+        },
+        {
+            "name": "Beshelmek",
+            "email": "votyakov1404@gmail.com",
+            "role": "Update author"
         }
     ],
     "require": {
